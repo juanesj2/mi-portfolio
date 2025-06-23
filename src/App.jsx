@@ -10,6 +10,7 @@ import Aurora from './components/Aurora';
 import ClickSpark from './components/ClickSpark';
 import ProfileCard from './components/ProfileCard/ProfileCard'
 
+
 import './App.css'
 
 const dockItems = [
@@ -57,7 +58,7 @@ function App() {
       />
 
       {/* Navbar arriba */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Sección con fondo Aurora */}
       <section className="relative w-full h-[100vh] overflow-hidden">
