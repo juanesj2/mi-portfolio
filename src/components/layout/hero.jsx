@@ -23,6 +23,15 @@ function Hero() {
         onLetterAnimationComplete={handleAnimationComplete}
       />
 
+      {/* Background Effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* abajo a la izquierda */}
+        <div 
+        className="w-96 h-96 bg-cyan-400 opacity-10 rounded-full blur-3xl absolute -bottom-50 -left-32 animate-pulse" 
+        style={{ backgroundColor: '#24F640' }}
+        />
+      </div>
+      
     <FadeContent blur={true} duration={500} easing="ease-out" initialOpacity={0.5}>
       <p className="text-gray-300 mt-4 max-w-xl">
         Soy un desarrollador web apasionado, siempre aprendiendo y buscando nuevos retos.

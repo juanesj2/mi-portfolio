@@ -1,6 +1,16 @@
 function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 bg-dark">
+    <section id="projects" className="relative py-24 px-6 flex flex-col items-center justify-center text-center overflow-hidden">
+
+      {/* Background Effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Arriba a la derecha */}
+        <div 
+        className="w-80 h-80 bg-cyan-400 opacity-10 rounded-full blur-3xl absolute -top-50 -right-32 animate-pulse" 
+        style={{ backgroundColor: '#24F640' }}
+        />
+      </div>
+
       <h3 className="text-3xl font-bold text-neon mb-4">Proyectos</h3>
       <div className="grid gap-8 md:grid-cols-2">
         <div className="p-4 border border-neon rounded-lg hover:scale-105 transition">
