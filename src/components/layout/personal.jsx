@@ -30,17 +30,17 @@ function Personal() {
 
         <SlideInMotion direction="left">
           <SpotlightCard className="custom-spotlight-card shadow-xl" spotlightColor="rgba(0, 255, 34, 0.18)">
-            <p className="text-gray-400 text-lg md:text-xl flex items-center justify-center gap-2">
-              <span className="text-xl">📍</span>
-              <span><span className="text-neon font-semibold">Albacete y cercanias - España</span> (disponible para <span className="text-cyan-400 font-semibold">trabajo remoto</span>)</span>
+            <p className="text-gray-200 text-lg md:text-xl font-semibold mt-2">
+              ¿Quieres saber más sobre mí? <span className="text-neon">¡Contáctame!</span> Estoy <span className="text-cyan-400 font-semibold">abierto a nuevas oportunidades</span> y <span className="text-cyan-400 font-semibold">colaboraciones</span>.
             </p>
           </SpotlightCard>
         </SlideInMotion>
 
         <SlideInMotion direction="right">
           <SpotlightCard className="custom-spotlight-card shadow-xl" spotlightColor="rgba(0, 255, 34, 0.18)">
-            <p className="text-gray-200 text-lg md:text-xl font-semibold mt-2">
-              ¿Quieres saber más sobre mí? <span className="text-neon">¡Contáctame!</span> Estoy <span className="text-cyan-400 font-semibold">abierto a nuevas oportunidades</span> y <span className="text-cyan-400 font-semibold">colaboraciones</span>.
+            <p className="text-gray-400 text-lg md:text-xl flex items-center justify-center gap-2">
+              <span className="text-xl">📍</span>
+              <span><span className="text-neon font-semibold">Albacete y cercanias - España</span> (disponible para <span className="text-cyan-400 font-semibold">trabajo remoto</span>)</span>
             </p>
           </SpotlightCard>
         </SlideInMotion>

@@ -1,5 +1,7 @@
+import React from 'react';
 import SpotlightCard from '../SpotlightCard/SpotlightCard.jsx';
 import SlideInMotion from '../../TextAnimations/SlideIn/SlideInMotion.jsx';
+import Skills from '../react-circular-progressbar/Skills.jsx';
 
 function About() {
   return (
@@ -41,6 +43,10 @@ function About() {
             </p>
           </SpotlightCard>
         </SlideInMotion>
+      </div>
+      <div className="mt-16 w-full">
+        {/* Mis habilidades */}
+        <Skills />
       </div>
     </section>
   );
