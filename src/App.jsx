@@ -1,13 +1,13 @@
-import Navbar from './components/layout/navbar'
 import Hero from './components/layout/hero'
 import About from './components/layout/about'
+import Personal from './components/layout/personal'
 import Projects from './components/projects'
 import Contact from './components/layout/contact'
 import Footer from './components/layout/footer'
 import { VscHome, VscArchive, VscAccount, VscSettingsGear } from 'react-icons/vsc'
 import Dock from './components/Dock'
 import Aurora from './components/Aurora';
-import ClickSpark from './components/ClickSpark';
+import ClickSpark from './Animations/ClickSpark/ClickSpark.jsx';
 import ProfileCard from './components/ProfileCard/ProfileCard'
 
 
@@ -48,14 +48,15 @@ function App() {
   return (
     <div className="relative w-full min-h-screen text-white font-sans pb-10">
       {/* Sparks por encima de todo */}
+
       <ClickSpark
         sparkColor='#00FF1E'
         sparkSize={10}
         sparkRadius={15}
         sparkCount={8}
         duration={400}
-        style={{ position: 'fixed', inset: 0, zIndex: 999, pointerEvents: 'none' }}
-      />
+      >
+      
 
       {/* Navbar arriba */}
       {/* <Navbar /> */}
@@ -78,6 +79,8 @@ function App() {
 
       {/* Resto de secciones, cada una puede tener su fondo */}
       <About />
+      <Personal />
+
       <Projects />
       <Contact>
         <ProfileCard
@@ -102,7 +105,9 @@ function App() {
         panelHeight={68}
         baseItemSize={50}
         magnification={70}
+        
       />
+      </ClickSpark>
     </div>
   );
 }

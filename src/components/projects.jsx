@@ -6,7 +6,7 @@ function Projects() {
       <div className="absolute inset-0 pointer-events-none">
         {/* Arriba a la derecha */}
         <div 
-        className="w-80 h-80 bg-cyan-400 opacity-10 rounded-full blur-3xl absolute -top-50 -right-32 animate-pulse" 
+        className="w-80 h-80 bg-cyan-400 opacity-10 rounded-full blur-3xl absolute -top-50 -left-32 animate-pulse" 
         style={{ backgroundColor: '#24F640' }}
         />
       </div>
