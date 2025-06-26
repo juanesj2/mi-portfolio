@@ -1,20 +1,19 @@
 import { motion } from 'framer-motion';
+import enfocaLogo from '../assets/logo_ENFOKA-sin-fondo.png';
 
 function Projects() {
   const projects = [
     {
-      title: 'Proyecto 1',
-      description: 'Descripción breve de lo que hace tu proyecto.',
-      image: 'https://via.placeholder.com/400x200',
-      demoLink: 'https://demo1.com',
-      codeLink: 'https://github.com/usuario/proyecto1',
-      tech: ['React', 'Tailwind', 'API'],
+      title: 'Enfoca',
+      description: 'Una red social moderna y visual, enfocada en la fotografía.',
+      image: enfocaLogo,
+      codeLink: 'https://github.com/juanesj2/Enfoca_ProyectoFinal',
+      tech: ['Laravel', 'PHP', 'Bootstrap', 'MySQL', 'JavaScript'],
     },
     {
       title: 'Proyecto 2',
       description: 'Otro proyecto moderno y visual.',
       image: 'https://via.placeholder.com/400x200',
-      demoLink: 'https://demo2.com',
       codeLink: 'https://github.com/usuario/proyecto2',
       tech: ['Laravel', 'PHP', 'MySQL'],
     },
@@ -40,7 +39,7 @@ function Projects() {
             whileHover={{ scale: 1.03, boxShadow: '0 0 30px rgba(0,255,100,0.3)' }}
             className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300"
           >
-            <img src={image} alt={title} className="w-full h-48 object-cover" />
+            <img src={image} alt={title} className="w-full h-48 object-cover-cover" />
             <div className="p-6 text-left">
               <h4 className="text-xl font-semibold mb-2 text-neon">{title}</h4>
               <p className="text-gray-400 mb-4">{description}</p>
