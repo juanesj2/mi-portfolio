@@ -9,7 +9,7 @@ import Dock from './components/Dock'
 import Aurora from './components/Aurora';
 import ClickSpark from './Animations/ClickSpark/ClickSpark.jsx';
 import ProfileCard from './components/ProfileCard/ProfileCard'
-
+import avatar from '/public/avatar.png';
 
 import './App.css'
 
@@ -89,8 +89,9 @@ function App() {
           handle="Juanes"
           status="Online"
           contactText="Contact Me"
-          avatarUrl="./assets/avatar.jpg"
-          iconUrl=""
+          avatarUrl="https://w7.pngwing.com/pngs/109/737/png-transparent-avatar-movie-character-neytiri-avatar-icon-avatar-face-heroes-head.png"
+          iconUrl="https://raw.githubusercontent.com/DavidHDev/react-bits/refs/heads/main/public/assets/iconpattern.png"
+          grainUrl='https://raw.githubusercontent.com/DavidHDev/react-bits/refs/heads/main/public/assets/grain.webp'
           showUserInfo={true}
           enableTilt={true}
           onContactClick={() => console.log('Contact clicked')}
