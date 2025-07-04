@@ -49,7 +49,7 @@ const ProfileCardComponent = ({
   name = "Juan Stiven Alcañiz Aullon",
   title = "Desarrollador Web junior",
   handle = "juanes",
-  status = "Online",
+  status = "Disponible",
   contactText = "Contact",
   showUserInfo = true,
   onContactClick,

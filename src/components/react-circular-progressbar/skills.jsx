@@ -6,10 +6,10 @@ import Skill from './Skill'; // Asegúrate que está en la misma carpeta
 const Skills = () => {
   const skills = [
     
-    { name: 'Laravel', percentage: 80 },
-    { name: 'PHP', percentage: 80 },
     { name: 'CSS', percentage: 80 },
-    { name: 'JavaScript', percentage: 80 },
+    { name: 'Laravel', percentage: 76 },
+    { name: 'PHP', percentage: 75 },
+    { name: 'JavaScript', percentage:60 },
     { name: 'Elementor', percentage: 75 },
     { name: 'Wordpress', percentage: 70 },
     { name: 'React', percentage: 60 },
