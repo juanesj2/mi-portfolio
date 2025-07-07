@@ -1,7 +1,7 @@
 import React from 'react';
 import SpotlightCard from '../SpotlightCard/SpotlightCard.jsx';
 import SlideInMotion from '../../TextAnimations/SlideIn/SlideInMotion.jsx';
-import Skills from '../react-circular-progressbar/Skills.jsx';
+import Skills from '../react-circular-progressbar/skills.jsx';
 
 function About() {
   return (
