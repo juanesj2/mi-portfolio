@@ -91,8 +91,6 @@ function App() {
           status="Disponible"
           contactText="Contactame"
           avatarUrl="https://raw.githubusercontent.com/juanesj2/mi-portfolio/refs/heads/main/public/avatar.png"
-          iconUrl="https://raw.githubusercontent.com/DavidHDev/react-bits/refs/heads/main/public/assets/iconpattern.png"
-          grainUrl='https://raw.githubusercontent.com/DavidHDev/react-bits/refs/heads/main/public/assets/grain.webp'
           showUserInfo={true}
           enableTilt={true}
           onContactClick={() => setShowModal(true)}
