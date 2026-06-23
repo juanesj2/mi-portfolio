@@ -2,39 +2,39 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import enfocaLogo from '../assets/logo_ENFOKA-sin-fondo.png';
-import gasolineraLogo from '../assets/gasolinera.png';
-import agenciaViajesLogo from '../assets/agenciaViajesLogo.png';
-import springBootLogo from '../assets/springBoot.png';
+import loveAppIcon from '../assets/love_app_icon.png';
+import newsAppIcon from '../assets/news_app_icon.png';
+import apiAppIcon from '../assets/api_app_icon.png';
 
 function Projects() {
   const projects = [
     {
-      title: 'Enfoca',
-      description: 'Una red social moderna y visual, enfocada en la fotografía.',
+      title: 'Enfoca (App & Backend)',
+      description: 'Plataforma social completa enfocada en la fotografía. Aplicación móvil y API backend potente.',
       image: enfocaLogo,
-      codeLink: 'https://github.com/juanesj2/Enfoca_ProyectoFinal',
-      tech: ['Laravel', 'PHP', 'Bootstrap', 'MySQL', 'JavaScript'],
+      codeLink: 'https://github.com/juanesj2/enfoca_app',
+      tech: ['Flutter', 'Dart', 'Laravel', 'PHP', 'MySQL'],
     },
     {
-      title: 'Gestion Básica Gasolinera',
-      description: 'Un sistema de gestión para estaciones de servicio, permitiendo el control de ventas.',
-      image: gasolineraLogo,
-      codeLink: 'https://github.com/juanesj2/Gestion_basica_gasolinera.git',
-      tech: ['PHP', 'Html', 'CSS', 'MySQL'],
+      title: 'Love App',
+      description: 'Aplicación móvil privada orientada a la gestión de tareas y eventos en pareja. Creada desde cero.',
+      image: loveAppIcon,
+      codeLink: 'https://github.com/juanesj2/love-app',
+      tech: ['TypeScript', 'React Native', 'Node.js'],
     },
     {
-      title: 'Agencia de Viajes',
-      description: 'Un sitio web para una agencia de viajes, con funcionalidades de búsqueda y reservas.',
-      image: agenciaViajesLogo,
-      codeLink: 'https://github.com/juanesj2/agenciaViajes/tree/master',
-      tech: ['PHP', 'Html', 'CSS', 'MySQL'],
+      title: 'Periódico Digital',
+      description: 'Aplicación móvil multiplataforma para la lectura y gestión en tiempo real de noticias.',
+      image: newsAppIcon,
+      codeLink: 'https://github.com/juanesj2/PeriodicoDigital',
+      tech: ['TypeScript', 'Angular', 'Ionic'],
     },
     {
-      title: 'Gestion Básica Gasolinera en Spring Boot',
-      description: 'Un sistema de gestión para estaciones de servicio, desarrollado con Spring Boot.',
-      image: springBootLogo,
-      codeLink: 'https://github.com/juanesj2/Gasolinera-en-SpringBoot/tree/master',
-      tech: ['Java', 'Spring Boot', 'MySQL', 'Docker'],
+      title: 'J2-API',
+      description: 'API REST escalable y segura desarrollada para dar servicio a aplicaciones cliente.',
+      image: apiAppIcon,
+      codeLink: 'https://github.com/juanesj2/J2-API',
+      tech: ['PHP', 'Arquitectura REST', 'JSON'],
     },
   ];
 
