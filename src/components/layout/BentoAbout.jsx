@@ -44,9 +44,14 @@ const BentoAbout = () => {
             <h4 className="text-xl font-semibold text-white mb-2">Ubicación</h4>
             <p className="text-gray-400">Albacete, España</p>
           </div>
-          <div className="mt-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium">
+          <div className="mt-8 flex flex-col gap-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium w-max">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
               Disponible en Remoto
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-medium w-max group" title="El motor principal de mi código">
+              <span className="group-hover:animate-bounce">☕</span>
+              Nivel de Café: 100%
             </div>
           </div>
         </motion.div>
