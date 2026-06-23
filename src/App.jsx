@@ -12,17 +12,26 @@ const dockItems = [
   {
     icon: <VscHome size={24} />,
     label: 'Inicio',
-    onClick: () => { window.location.hash = '#'; },
+    onClick: () => { 
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.history.pushState(null, '', '#');
+    },
   },
   {
     icon: <VscAccount size={24} />,
     label: 'Sobre mí',
-    onClick: () => { window.location.hash = '#about'; },
+    onClick: () => { 
+      document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '#about');
+    },
   },
   {
     icon: <VscArchive size={24} />,
     label: 'Proyectos',
-    onClick: () => { window.location.hash = '#projects'; },
+    onClick: () => { 
+      document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '#projects');
+    },
   }
 ];
 
@@ -117,12 +126,7 @@ function App() {
 
       {/* Dock fijo abajo */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40">
-        <Dock
-          items={dockItems}
-          panelHeight={60}
-          baseItemSize={44}
-          magnification={60}
-        />
+        <Dock items={dockItems} />
       </div>
     </div>
   );
