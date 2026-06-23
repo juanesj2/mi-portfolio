@@ -49,18 +49,16 @@ function App() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="relative w-full min-h-screen text-white font-sans pb-10">
+    <div className="relative w-full min-h-screen text-white font-sans pb-10 overflow-x-hidden selection:bg-brand selection:text-white">
       {/* Sparks por encima de todo */}
-
       <ClickSpark
-        sparkColor='#00FF1E'
-        sparkSize={10}
-        sparkRadius={15}
-        sparkCount={8}
-        duration={400}
+        sparkColor='#818cf8'
+        sparkSize={6}
+        sparkRadius={12}
+        sparkCount={6}
+        duration={500}
       >
       
-
       {/* Navbar arriba */}
       {/* <Navbar /> */}
 
@@ -69,10 +67,10 @@ function App() {
         {/* Fondo Aurora fijo en esta sección */}
         <div className="absolute inset-0 -z-10 w-screen h-full">
           <Aurora
-            colorStops={["#29FFD4", "#24F640", "#29FFD4"]}
+            colorStops={["#312e81", "#4f46e5", "#7e22ce"]}
             blend={0.5}
-            amplitude={1.0}
-            speed={1}
+            amplitude={0.8}
+            speed={0.5}
           />
         </div>
 
@@ -88,7 +86,7 @@ function App() {
       <Contact>
         <ProfileCard
           name="Juan S. Alcañiz Aullon"
-          title="Desarrollador Web Junior"
+          title="Full Stack Developer"
           handle="Juanes"
           status="Disponible"
           contactText="Contactame"
@@ -104,59 +102,66 @@ function App() {
       <AnimatePresence>
         {showModal && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            onClick={() => setShowModal(false)}
           >
             <motion.div
-              className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg w-full max-w-md"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              className="bg-gray-900/90 border border-white/10 p-8 rounded-3xl shadow-2xl w-full max-w-md backdrop-blur-xl relative"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", bounce: 0.3, duration: 0.5 }}
+              onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
-                Mis Datos de Contacto
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon to-brand rounded-t-3xl" />
+              
+              <h2 className="text-3xl font-black mb-6 text-white tracking-tight">
+                Hablemos
               </h2>
 
-              <div className="space-y-4 text-gray-700 dark:text-gray-300">
-                <div className="flex items-center gap-3">
-                  <span className="font-semibold">Email:</span>
-                  <a href="mailto:juanstivenaa82@gmail.com" className="hover:underline">
-                    juanstivenaa82@gmail.com
-                  </a>
+              <div className="space-y-5 text-gray-300">
+                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-neon/10 flex items-center justify-center text-neon">
+                    📧
+                  </div>
+                  <div>
+                    <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Email</span>
+                    <a href="mailto:juanstivenaa82@gmail.com" className="font-medium hover:text-white transition-colors">
+                      juanstivenaa82@gmail.com
+                    </a>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="font-semibold">GitHub:</span>
-                  <a
-                    href="https://github.com/juanesj2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    github.com/juanesj2
-                  </a>
+                
+                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center text-brand">
+                    🐙
+                  </div>
+                  <div>
+                    <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">GitHub</span>
+                    <a href="https://github.com/juanesj2" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-white transition-colors">
+                      github.com/juanesj2
+                    </a>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="font-semibold">LinkedIn:</span>
-                  <a
-                    href="https://www.linkedin.com/in/juan-stiven-alca%C3%B1iz-aullon-b46a1a274/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    Juan Stiven Alcañiz Aullon
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="font-semibold">Teléfono:</span>
-                  <span>+34 653 797 301</span>
+                
+                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400">
+                    💼
+                  </div>
+                  <div>
+                    <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/juan-stiven-alca%C3%B1iz-aullon-b46a1a274/" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-white transition-colors">
+                      Juan Stiven Alcañiz
+                    </a>
+                  </div>
                 </div>
               </div>
 
               <button
-                className="mt-6 text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                className="mt-8 w-full py-3 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold rounded-xl transition-colors"
                 onClick={() => setShowModal(false)}
               >
                 Cerrar

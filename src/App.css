@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-#root {
-  text-align: center;
-}
+@import "tailwindcss";
 
 html, body, #root {
   width: 100%;

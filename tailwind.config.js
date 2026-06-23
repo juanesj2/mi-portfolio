@@ -9,7 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        neon: '#39ff14',
+        neon: '#818cf8', // Indigo 400
+        brand: '#c084fc', // Purple 400
         dark: '#0f0f0f',
       },
     },
