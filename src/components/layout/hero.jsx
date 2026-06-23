@@ -3,32 +3,28 @@ import { motion } from 'framer-motion';
 
 function Hero() {
   return (
-    <section className="h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
-      
-      {/* Subtle Glow Behind Text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand opacity-20 blur-[120px] rounded-full pointer-events-none mix-blend-screen" />
-      
+    <section id="home" className="relative flex flex-col items-center justify-center text-center pt-20 pb-10 z-10 min-h-[70vh]">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="z-10 flex flex-col items-center"
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="max-w-4xl px-4"
       >
-        <span className="text-neon font-medium tracking-widest uppercase text-sm md:text-base mb-4 drop-shadow-md">
-          Hola, mundo. Soy
-        </span>
-        
-        <h1 className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 mb-6 tracking-tight drop-shadow-lg">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-8">
+          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          <span className="text-sm font-medium text-gray-300">Disponible para trabajar</span>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white mb-6">
           Juan Stiven
         </h1>
         
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-400 mb-8 max-w-2xl">
-          Full Stack Developer <br className="md:hidden" />
-          <span className="text-brand opacity-80">&</span> Creador Digital
+        <h2 className="text-2xl md:text-4xl font-semibold tracking-tight text-gray-400 mb-8">
+          Full Stack Developer
         </h2>
-        
-        <p className="text-gray-400 max-w-xl text-lg mb-12 leading-relaxed">
-          Especializado en construir experiencias web rápidas, accesibles y con un diseño impecable utilizando React, Laravel y Tailwind CSS.
+
+        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Diseñando y desarrollando aplicaciones web rápidas, escalables y con una atención meticulosa al detalle.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">

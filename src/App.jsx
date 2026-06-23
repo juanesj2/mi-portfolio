@@ -1,165 +1,109 @@
 import React, { useState } from 'react'
 import Hero from './components/layout/hero'
-import About from './components/layout/about'
-import Personal from './components/layout/personal'
+import BentoAbout from './components/layout/BentoAbout'
 import Projects from './components/projects'
-import Contact from './components/layout/contact'
 import Footer from './components/layout/footer'
+import ProfileCard from './components/ProfileCard/ProfileCard'
 import { VscHome, VscArchive, VscAccount, VscSettingsGear } from 'react-icons/vsc'
 import Dock from './components/Dock'
-import Aurora from './components/Aurora';
-import ClickSpark from './Animations/ClickSpark/ClickSpark.jsx';
-import ProfileCard from './components/ProfileCard/ProfileCard'
 import { motion, AnimatePresence } from 'framer-motion';
-
-import './App.css'
 
 const dockItems = [
   {
     icon: <VscHome size={24} />,
+    label: 'Inicio',
+    onClick: () => { window.location.hash = '#'; },
+  },
+  {
+    icon: <VscAccount size={24} />,
     label: 'Sobre mí',
-    onClick: () => {
-      window.location.hash = '#about';
-    },
+    onClick: () => { window.location.hash = '#about'; },
   },
   {
     icon: <VscArchive size={24} />,
     label: 'Proyectos',
-    onClick: () => {
-      window.location.hash = '#projects';
-    },
-  },
-  {
-    icon: <VscAccount size={24} />,
-    label: 'Contacto',
-    onClick: () => {
-      window.location.hash = '#contact';
-    },
-  },
-  {
-    icon: <VscSettingsGear size={24} />,
-    label: 'Top',
-    onClick: () => {
-      window.location.hash = '#';
-    },
-  },
+    onClick: () => { window.location.hash = '#projects'; },
+  }
 ];
 
 function App() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="relative w-full min-h-screen text-white font-sans pb-10 overflow-x-hidden selection:bg-brand selection:text-white">
-      {/* Sparks por encima de todo */}
-      <ClickSpark
-        sparkColor='#818cf8'
-        sparkSize={6}
-        sparkRadius={12}
-        sparkCount={6}
-        duration={500}
-      >
+    <div className="relative w-full min-h-screen text-gray-200 font-sans pb-24 selection:bg-white selection:text-black">
       
-      {/* Navbar arriba */}
-      {/* <Navbar /> */}
+      {/* Background radial gradient overlay for depth */}
+      <div className="fixed inset-0 pointer-events-none z-[-1] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900/40 via-black to-black"></div>
 
-      {/* Sección con fondo Aurora */}
-      <section className="relative w-full h-[100vh] overflow-hidden">
-        {/* Fondo Aurora fijo en esta sección */}
-        <div className="absolute inset-0 -z-10 w-screen h-full">
-          <Aurora
-            colorStops={["#312e81", "#4f46e5", "#7e22ce"]}
-            blend={0.5}
-            amplitude={0.8}
-            speed={0.5}
-          />
-        </div>
-
-        {/* Contenido principal (Hero en este caso) */}
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 flex flex-col gap-32">
         <Hero />
-      </section>
-
-      {/* Resto de secciones, cada una puede tener su fondo */}
-      <About />
-      <Personal />
-
-      <Projects />
-      <Contact>
-        <ProfileCard
-          name="Juan S. Alcañiz Aullon"
-          title="Full Stack Developer"
-          handle="Juanes"
-          status="Disponible"
-          contactText="Contactame"
-          avatarUrl="https://raw.githubusercontent.com/juanesj2/mi-portfolio/refs/heads/main/public/avatar.png"
-          showUserInfo={true}
-          enableTilt={true}
-          onContactClick={() => setShowModal(true)}
-        />
-      </Contact>
+        <BentoAbout />
+        <Projects />
+        
+        <section id="contact" className="py-24 flex flex-col items-center justify-center">
+          <h3 className="text-3xl font-bold tracking-tight text-white mb-12">Contacto</h3>
+          <ProfileCard
+            name="Juan S. Alcañiz"
+            title="Full Stack Developer"
+            handle="juanes"
+            status="Disponible"
+            contactText="Hablemos"
+            avatarUrl="https://raw.githubusercontent.com/juanesj2/mi-portfolio/refs/heads/main/public/avatar.png"
+            showUserInfo={true}
+            enableTilt={true}
+            onContactClick={() => setShowModal(true)}
+            className="shadow-2xl shadow-black/50"
+          />
+        </section>
+      </main>
 
       <AnimatePresence>
         {showModal && (
           <motion.div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setShowModal(false)}
           >
             <motion.div
-              className="bg-gray-900/90 border border-white/10 p-8 rounded-3xl shadow-2xl w-full max-w-md backdrop-blur-xl relative"
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="glass-panel p-8 rounded-3xl w-full max-w-md relative overflow-hidden"
+              initial={{ scale: 0.95, opacity: 0, y: 10 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              transition={{ type: "spring", bounce: 0.3, duration: 0.5 }}
+              exit={{ scale: 0.95, opacity: 0, y: 10 }}
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon to-brand rounded-t-3xl" />
+              <h2 className="text-2xl font-semibold mb-6 text-white tracking-tight">Contacto</h2>
               
-              <h2 className="text-3xl font-black mb-6 text-white tracking-tight">
-                Hablemos
-              </h2>
-
-              <div className="space-y-5 text-gray-300">
-                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-neon/10 flex items-center justify-center text-neon">
-                    📧
-                  </div>
+              <div className="space-y-4">
+                <a href="mailto:juanstivenaa82@gmail.com" className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/5 group">
+                  <div className="text-gray-400 group-hover:text-white transition-colors">📧</div>
                   <div>
-                    <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Email</span>
-                    <a href="mailto:juanstivenaa82@gmail.com" className="font-medium hover:text-white transition-colors">
-                      juanstivenaa82@gmail.com
-                    </a>
+                    <div className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-0.5">Email</div>
+                    <div className="text-sm font-medium text-gray-200">juanstivenaa82@gmail.com</div>
                   </div>
-                </div>
+                </a>
                 
-                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center text-brand">
-                    🐙
-                  </div>
+                <a href="https://github.com/juanesj2" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/5 group">
+                  <div className="text-gray-400 group-hover:text-white transition-colors">🐙</div>
                   <div>
-                    <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">GitHub</span>
-                    <a href="https://github.com/juanesj2" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-white transition-colors">
-                      github.com/juanesj2
-                    </a>
+                    <div className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-0.5">GitHub</div>
+                    <div className="text-sm font-medium text-gray-200">github.com/juanesj2</div>
                   </div>
-                </div>
+                </a>
                 
-                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400">
-                    💼
-                  </div>
+                <a href="https://www.linkedin.com/in/juan-stiven-alca%C3%B1iz-aullon-b46a1a274/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/5 group">
+                  <div className="text-gray-400 group-hover:text-white transition-colors">💼</div>
                   <div>
-                    <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">LinkedIn</span>
-                    <a href="https://www.linkedin.com/in/juan-stiven-alca%C3%B1iz-aullon-b46a1a274/" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-white transition-colors">
-                      Juan Stiven Alcañiz
-                    </a>
+                    <div className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-0.5">LinkedIn</div>
+                    <div className="text-sm font-medium text-gray-200">Juan Stiven Alcañiz</div>
                   </div>
-                </div>
+                </a>
               </div>
 
               <button
-                className="mt-8 w-full py-3 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold rounded-xl transition-colors"
+                className="mt-8 w-full py-3 bg-white text-black hover:bg-gray-200 font-medium rounded-xl transition-colors text-sm"
                 onClick={() => setShowModal(false)}
               >
                 Cerrar
@@ -169,20 +113,19 @@ function App() {
         )}
       </AnimatePresence>
 
-      
       <Footer />
 
       {/* Dock fijo abajo */}
-      <Dock
-        items={dockItems}
-        panelHeight={68}
-        baseItemSize={50}
-        magnification={70}
-        
-      />
-      </ClickSpark>
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40">
+        <Dock
+          items={dockItems}
+          panelHeight={60}
+          baseItemSize={44}
+          magnification={60}
+        />
+      </div>
     </div>
   );
 }
 
-export default App
+export default App;
