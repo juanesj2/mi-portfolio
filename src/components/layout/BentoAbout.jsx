@@ -120,6 +120,45 @@ const BentoAbout = () => {
           </div>
         </motion.div>
 
+        {/* AI Philosophy - 3 columns wide */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.4 }}
+          className="glass-panel p-8 rounded-3xl md:col-span-3 flex flex-col md:flex-row gap-8 overflow-hidden relative group items-center"
+        >
+          <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-colors pointer-events-none"></div>
+          
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-2xl">🧠</span>
+              <h4 className="text-xl font-semibold text-white">Desarrollo Aumentado por IA</h4>
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed max-w-xl">
+              La Inteligencia Artificial ha venido para quedarse y transformar el mercado. No me opongo a ella; soy partidario de usarla <b>con cabeza</b> como un "copiloto" que potencia mi productividad. Hoy en día, creo firmemente que no integrarla en el flujo de trabajo diario es quedarse atrás.
+            </p>
+          </div>
+
+          <div className="flex-[0.8] flex flex-wrap gap-3 justify-start md:justify-end">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5 text-gray-300 text-xs font-medium cursor-default hover:bg-white/10 transition-colors">
+              <span className="text-purple-400">✧</span> Cursor
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5 text-gray-300 text-xs font-medium cursor-default hover:bg-white/10 transition-colors">
+              <span className="text-blue-400">✧</span> Copilot
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5 text-gray-300 text-xs font-medium cursor-default hover:bg-white/10 transition-colors">
+              <span className="text-amber-400">✧</span> Claude
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5 text-gray-300 text-xs font-medium cursor-default hover:bg-white/10 transition-colors">
+              <span className="text-indigo-400">✧</span> Gemini
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5 text-gray-300 text-xs font-medium cursor-default hover:bg-white/10 transition-colors">
+              <span className="text-emerald-400">✧</span> IA en Local
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
