@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { VscCode, VscLocation } from 'react-icons/vsc';
 import { FiCamera, FiSettings, FiBox } from 'react-icons/fi';
+import { SiPhp, SiLaravel, SiJavascript, SiReact, SiTailwindcss, SiWordpress, SiMysql, SiGit } from 'react-icons/si';
 
 const BentoAbout = () => {
   return (
@@ -90,14 +91,31 @@ const BentoAbout = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.3 }}
-          className="glass-panel p-8 rounded-3xl md:col-span-3 flex flex-col md:flex-row items-center justify-between gap-6"
+          className="glass-panel p-8 rounded-3xl md:col-span-3 flex flex-col gap-6 overflow-hidden relative group"
         >
-          <h4 className="text-lg font-medium text-white whitespace-nowrap">Stack Principal</h4>
-          <div className="flex flex-wrap gap-2 justify-end">
-            {['PHP', 'Laravel', 'JavaScript', 'React', 'Tailwind', 'WordPress'].map((tech) => (
-              <span key={tech} className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 text-sm hover:text-white hover:bg-white/10 transition-colors cursor-default">
-                {tech}
-              </span>
+          <div className="absolute -right-20 -top-20 w-64 h-64 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors pointer-events-none"></div>
+          
+          <h4 className="text-xl font-semibold text-white">Stack Principal</h4>
+          
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { name: 'PHP', icon: <SiPhp size={20} /> },
+              { name: 'Laravel', icon: <SiLaravel size={20} /> },
+              { name: 'JavaScript', icon: <SiJavascript size={20} /> },
+              { name: 'React', icon: <SiReact size={20} /> },
+              { name: 'Tailwind CSS', icon: <SiTailwindcss size={20} /> },
+              { name: 'WordPress', icon: <SiWordpress size={20} /> },
+              { name: 'MySQL', icon: <SiMysql size={20} /> },
+              { name: 'Git', icon: <SiGit size={20} /> },
+            ].map((tech) => (
+              <div key={tech.name} className="group/skill flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all hover:-translate-y-1 cursor-default">
+                <div className="text-gray-400 group-hover/skill:text-white transition-colors">
+                  {tech.icon}
+                </div>
+                <span className="text-gray-300 group-hover/skill:text-white font-medium text-sm transition-colors">
+                  {tech.name}
+                </span>
+              </div>
             ))}
           </div>
         </motion.div>
